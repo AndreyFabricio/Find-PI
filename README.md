@@ -8,4 +8,4 @@ This project generates up to the Nth decimal place of PI
 
 ## Limitations
 - Because of the [Decimal Format](https://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html), the number of decimal PI digits the program can find is limited to eleven
-- Without the [Decimal Format](https://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html) the number of decimal PI digits the program can find is limited to the number type (*Ex.:* [Double](https://docs.oracle.com/javase/7/docs/api/java/lang/Double.html) *is 15*)
+- Without the [Decimal Format](https://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html) the number of decimal PI digits the program can find is limited to the number type (*Ex:* [Double](https://docs.oracle.com/javase/7/docs/api/java/lang/Double.html) *is 15*)
