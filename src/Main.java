@@ -23,43 +23,59 @@ public class Main {
 		    return(n * factorial(n-1));    
 		 } 
 	
-	public static void main(String[] args) {
+	static int readN () {
 		
-		// Gets the Nth value from the user	
+		// Gets the Nth value from the user
 		
-		int Nth = 0;
+		int N = 0;
 		
 		System.out.print("Type how many decimal places of PI you want (max 11): ");
 		Scanner scanner = new Scanner(System.in);
 		
         try {
-            Nth = Integer.parseInt(scanner.nextLine());
+            N = Integer.parseInt(scanner.nextLine());
         } catch(NumberFormatException nfe) {
             System.err.println("The value is not a valid integer");
         }
-		
-        if (Nth > 11) 
+        
+        if (N > 11) 
         	System.out.print("Cannot generate more than 11 decimals of PI");
         
-        // Finds PI using the Chudnovsky algorithm       
-
+        return N;
+	}
+	
+	static double createPI (int n) {
+		
+		// Finds PI using the Chudnovsky algorithm
+		
 		double x, pi, deno;
 		x = pi = deno = 0;
 		
-		for (int i = 0; i <= Nth; i ++) {
-			x = (Math.pow(-1,  i))*(factorial(6*i))*(13591409+545140134*i);
-			deno = factorial(3*i)*(Math.pow(factorial(i), 3))*(Math.pow(640320, 3*i));
+		for (int i = 0; i <= n; i ++) {
+			x = (Math.pow(-1,  i)) * (factorial(6 * i)) * (13591409+545140134 * i);
+			deno = factorial(3 * i) * (Math.pow(factorial(i), 3)) * (Math.pow(640320, 3 * i));
 			pi += x/deno;
 		}      
 		
-		pi = pi * 12 / Math.pow(640320, 1.5);
+		pi = pi * 12/Math.pow(640320, 1.5);
 		pi = 1/pi;
-		
-		// Prints the result with the decimal place limitation
-		
+		return pi;
+	}
+	
+	static String formatPI (double pi, int n) {
 		DecimalFormat df = new DecimalFormat();
-		df.setMaximumFractionDigits(Nth);
-		System.out.print(df.format(pi));
+		df.setMaximumFractionDigits(n);
+		return df.format(pi);
+	}
+	
+	public static void main(String[] args) {
+		
+		int Nth = readN();      
+		double PI = createPI(Nth);		
+		
+		// Prints the result with the decimal place limitation		
+		
+		System.out.print(formatPI(PI, Nth));
 		
 	}
 
