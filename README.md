@@ -1,11 +1,33 @@
 # Find-PI
+
 This project generates up to the Nth decimal place of PI
 
 ## The program step-by-step
-- To run the program you need java jre version 1.8.0 or higher that can be found [here](https://java.com/en/download/manual.jsp)
+
 - The program gets the Nth value from the user	
 - Then finds the value of PI using the [Chudnovsky algorithm](https://www.craig-wood.com/nick/articles/pi-chudnovsky/)
 - And finally prints the result with the decimal place limitation using [Substring](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+
+## Requirements
+
+- To run the program you need java jre version 1.8.0 or higher that can be found [here](https://java.com/en/download/manual.jsp)
+
+## Installing
+
+- The program does not need to be installed, just download the Jar file and run it
+- The Jar file can be downloaded by clicking [here](https://github.com/AndreyFabricio/Find-PI/releases/download/1.0.0/NthPI.jar)
+
+## Common problems
+
+**The program does not open on my machine**
+
+If you didn't, try download the java jre version 1.8.0 or higher that can be found [here](https://java.com/en/download/manual.jsp)
+
+**The program is asking to select a default program to run**
+
+Right click on the Jar file, then go to "Open With..." and then click "More Applications". In the list that opened you must choose the option "Java(TM) Platform SE Binary" and then click ok
+
+![Jar](https://github.com/AndreyFabricio/Fibonacci-Finder/blob/main/FibonacciFinder%20images/default-java-open.png)
 
 ## Limitations
 - The number of precise decimal PI digits the program can find is limited to the number type (*Ex:* [Double](https://docs.oracle.com/javase/7/docs/api/java/lang/Double.html) is 15)
